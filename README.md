@@ -195,7 +195,7 @@ Helps identify variance trends and operational patterns.
 ## ▶️ Open in Google Colab
 Run the notebook instantly:
 
-👉 https://colab.research.google.com/github/BeyondKitchen/fnb-pnl-analysis-2025/blob/main/F%26B_PnL_Analysis__2025_Actuals.ipynb
+👉 https://colab.research.google.com/github/BeyondKitchen/fnb-pnl-analysis-2025/blob/main/F%26B_PnL_Analysis_2025_Actuals.ipynb
 
 ---
 
