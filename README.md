@@ -1,179 +1,62 @@
-# 📊 2025 F&B P&L Analysis — Data Cleaning, KPI Reconstruction, and Operational Insights
+# 📊 2025 F&B P&L Analysis — Data Cleaning, KPI Reconstruction & Insights
 
 This project analyzes the **2025 Food & Beverage Profit & Loss (P&L)** performance for a hospitality operation.  
-The original financial export contained hidden rows, formulas, mixed data types, and non-numeric formatting.  
-To build an analysis-ready dataset, I cleaned the file and reconstructed all major KPIs using Python.
-
-This notebook demonstrates my ability to:
-
-- Clean and standardize raw financial datasets  
-- Rebuild operational KPIs using business logic  
-- Validate calculated totals against the original report  
-- Visualize revenue, cost, labor, and profitability trends  
-- Deliver actionable insights relevant to operations and management  
+The raw P&L export included hidden rows, merged formatting, and inconsistent numeric structures.  
+Using Python, I cleaned the dataset and reconstructed all major KPIs for a fully analysis-ready workflow.
 
 ---
 
-## 🧭 Project Objectives
-
-1. Convert a raw P&L export into a structured and reliable dataset  
-2. Rebuild core F&B financial metrics:
-   - Total Revenues  
-   - Total COGS  
-   - Salaries & Benefits  
-   - Promotional Allowances  
-   - Marketing & Sales  
-   - Professional Fees  
-   - Property & Administration  
-   - Total Operating Expenses  
-   - Total Departmental Expenses  
-3. Validate reconstructed totals vs. the original report  
-4. Visualize month-over-month trends for decision-making  
-5. Create a scalable framework for future P&L periods  
-
----
-
-## 🧹 1. Data Cleaning Process
-
-The raw spreadsheet contained:
-
-- Hidden non-F&B rows  
-- Broken formulas  
-- Commas, dashes (“–”), and blank values  
-- Mixed numeric and string formats  
-
-### Cleaning steps performed:
-
-- Extracted visible F&B account rows  
-- Removed formulas (values only)  
-- Stripped whitespace and formatting  
-- Converted all month columns to float  
-- Standardized missing or invalid values  
-- Renamed months to consistent `Jan-25`, `Feb-25`, ... format  
+## 🎯 Project Objectives
+- Convert a raw P&L export into a structured and reliable dataset  
+- Rebuild core F&B financial metrics:
+  - Total Revenues  
+  - Total COGS  
+  - Salaries & Benefits  
+  - Promotional Allowances  
+  - Marketing & Sales  
+  - Professional Fees  
+  - Property & Administration  
+  - Total Operating Expenses  
+  - Total Departmental Profit  
+- Validate calculated values against the original report  
+- Visualize revenue, cost, labor, and profit trends  
+- Provide insights applicable to real F&B operational decision-making  
 
 ---
 
-## 🧮 2. Business Logic for KPI Reconstruction
-
-All totals were rebuilt manually from the cleaned account-level rows:
-
-### **🔹 Total Revenues**
-```
-Food Sales
-+ Non-Alcoholic Bev. Sales
-+ Liquor Sales
-+ Beer Sales
-+ Wine Sales
-+ Retail Sales
-+ Tobacco Sales
-+ Other Revenue
-+ Revenue Complimentary
-```
-
-### **🔹 Total COGS**
-```
-Food Cost
-+ Non-alcoholic Beverage Cost
-+ Liquor Cost
-+ Beer Cost
-+ Wine Cost
-+ F&B Rebates
-+ Spillage / Waste
-+ Papergoods
-+ Tobacco
-```
-
-### **🔹 Salaries & Benefits, Total**
-```
-Salaries
-Overtime
-Statutory Holiday Worked
-Vacation
-Statutory Holiday
-Bonus
-Union Backpay Accrual
-Employer Health Tax Expense
-Extended Health Insurance Expense
-Workers Compensation
-Employer Match - Pension
-Employer Match - RRSP
-CPP Expense
-EI Expense
-Misc. Emp Benefits
-```
-
-### **🔹 Promotional Allowances, Total**
-```
-Food Promo Discounts
-Employee Comps - Meals and Entertain (Internal)
-```
-
-### **🔹 Marketing & Sales, Total**
-```
-Complimentary Amenities
-Player Comps - Meals - HL - Contra
-```
-
-### **🔹 Professional Fees, Total**
-```
-Fees
-Research & Development
-```
-
-### **🔹 Property & Administration, Total**
-```
-Licenses & Permits
-Equipment Rental
-Cleaning Supplies
-Replacements Supplies - China/Glass/Ctlry
-Paper & Plastic Disposables Supplies
-Supplies
-Laundry & Dry Cleaning
-Telephone
-Dues & Subscriptions
-Repairs & Maintenance
-Bank Charges
-Cash (Overages)/Shortages
-```
-
-### 🔹 **Total Operating Expenses**
-```
-Promotional Allowances, Total
-+ Marketing & Sales, Total
-+ Professional Fees, Total
-+ Property & Administration, Total
-```
-
-### 🔹 **Total Departmental Expenses**
-```
-Total Operating Expenses
-+ Salaries & Benefits, Total
-```
+## 🧹 Data Cleaning Overview
+- Removed hidden/merged header rows  
+- Standardized numeric and text formats  
+- Split combined category labels into structured columns  
+- Converted text-based numbers into numeric types  
+- Ensured clean category hierarchy for analysis  
+- Output a fully validated and structured dataset  
 
 ---
 
-## ✔️ 3. Validation
+## 🧮 KPI Reconstruction
+Rebuilt using industry logic:
 
-A full comparison table verifies:
+- COGS % of Revenue  
+- Labor Cost % of Revenue  
+- Operating Profit %  
+- Promotions Impact  
+- Departmental Profit Margin  
+- Month-over-Month Trend Metrics  
 
-- All reconstructed totals match the original report  
-- Differences are **0.0** for every KPI  
-- Confirms accuracy of the cleaning + logic pipeline  
+All KPI totals were cross-validated against the raw report.
 
 ---
 
-## 📈 4. Visualizations Included
-
-- Department Profit (2025) — line chart  
+## 📈 Visualizations Included
+- Monthly Department Profit (Line Chart)  
 - Monthly Profit Margin %  
-- Optional charts (Revenue vs COGS, Labor %, etc.)
-
-Helps identify variance trends and operational patterns.
+- Revenue / COGS / Labor Trend Lines  
+- Optional variance and anomaly detection visuals  
 
 ---
 
 ## 🛠 Tools Used
-
 - **Python:** Pandas, NumPy  
 - **Visualization:** Matplotlib  
 - **Environment:** Google Colab  
@@ -181,26 +64,43 @@ Helps identify variance trends and operational patterns.
 
 ---
 
-## 📁 Repository Structure
-```
-/
-│── F&B_PnL_Analysis__2025_Actuals.ipynb   # main analysis notebook
-│── fnb_pnl_actuals_clean_2025.csv         # cleaned dataset
-│── README.md
+## 📂 Project Structure
+fnb-pnl-analysis-2025/
+│
+├── data/
+│ ├── raw/
+│ │ └── fnb_pnl_2025_raw.csv
+│ ├── processed/
+│ │ └── fnb_pnl_actuals_clean_2025.csv
+│
+├── F&B_PnL_Analysis_2025_Actuals.ipynb
+├── README.md
 └── .gitignore
-```
+
+---
+
+## 📊 Dataset Description
+
+### **Raw Data (`/data/raw/`)**
+`fnb_pnl_2025_raw.csv`  
+Unclean file exported from the P&L system with formatting issues, merged headers, and inconsistent numerics.
+
+### **Processed Data (`/data/processed/`)**
+`fnb_pnl_actuals_clean_2025.csv`  
+Cleaned, structured dataset ready for:
+- BI dashboards  
+- Profitability modeling  
+- Forecasting  
+- Operations review  
 
 ---
 
 ## ▶️ Open in Google Colab
-Run the notebook instantly:
+Run the full notebook here:
 
 👉 https://colab.research.google.com/github/BeyondKitchen/fnb-pnl-analysis-2025/blob/main/F%26B_PnL_Analysis_2025_Actuals.ipynb
 
 ---
 
-## 📬 Contact  
-If you'd like to explore additional metrics, forecasting, or variance analysis, feel free to reach out.
-
----
-
+## 📬 Contact
+If you'd like additional KPIs, forecasting models, or operational insights, feel free to reach out.
