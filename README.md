@@ -65,17 +65,21 @@ All KPI totals were cross-validated against the raw report.
 ---
 
 ## 📂 Project Structure
+
+```
 fnb-pnl-analysis-2025/
 │
 ├── data/
-│ ├── raw/
-│ │ └── fnb_pnl_2025_raw.csv
-│ ├── processed/
-│ │ └── fnb_pnl_actuals_clean_2025.csv
+│   ├── raw/                     # Original exported P&L data
+│   │   └── fnb_pnl_2025_raw.csv
+│   └── processed/               # Cleaned & structured dataset
+│       └── fnb_pnl_actuals_clean_2025.csv
 │
-├── F&B_PnL_Analysis_2025_Actuals.ipynb
-├── README.md
+├── F&B_PnL_Analysis_2025_Actuals.ipynb   # Main analysis notebook
+├── README.md                              # Project documentation
 └── .gitignore
+```
+
 
 ---
 
